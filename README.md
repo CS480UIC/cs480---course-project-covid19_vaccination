@@ -27,6 +27,10 @@ A person can get the vaccine from any center but has to get the same 2 doses of 
 Each vaccine has a unique number which can be used to track the person who has received the vaccine and the date they got the vaccine.
 There is also information about the type of vaccine and the possible side effects caused by the vaccine in each dose. Finally the user can see  the states or the counties which have the highest vaccinations received.
 
+## ER Diagram
+![Screenshot 2021-07-06 at 10 39 32](https://user-images.githubusercontent.com/35519401/124619430-a6a76f80-de46-11eb-8630-79ea3dd5927a.png)
+
+
 <!-- ## How to build it?
 1. Clone this repository in your local machine.
 2. Install dependencies.
