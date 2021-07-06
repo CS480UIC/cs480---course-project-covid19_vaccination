@@ -51,5 +51,5 @@ There is also information about the type of vaccine and the possible side effect
   ```/api/screen``` -->
   
 
-![](https://komarev.com/ghpvc/?username=diamalab-covid19_vaccination&style=flat-square&color=blueviolet&label=Views)
+![](https://komarev.com/ghpvc/?username=diamalab-cs480---course-project-covid19_vaccination&style=flat-square&color=blueviolet&label=Views)
 
