@@ -5,6 +5,11 @@ Covid Vaccination Portal is a Database web application that maintains the record
 
 Designed in a way that the codebase can be easily extended and additional features such as analytics can be added.
 
+## Author(s)
+- Gnanamanickam Arumugaperumal
+- Sharat Naik
+- Ashwin Srivatsa
+
 ## Stack
 - Java
 - SQL database
