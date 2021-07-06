@@ -17,7 +17,7 @@ Designed in a way that the codebase can be easily extended and additional featur
 - RESTFul API Endpoints
 - Zipcode Analytics -->
 
-##Description:-
+## Description
 
 A user is signed into the portal and has a unique ID like (SSN), name, location and a phone number.
 Each county or a district has different vaccination centers each of which has a unique ID, which records the track of people vaccinated, the dose of the vaccine and the stock of vaccination left.
@@ -51,5 +51,5 @@ There is also information about the type of vaccine and the possible side effect
   ```/api/screen``` -->
   
 
-![](https://komarev.com/ghpvc/?username=laxmena-covid-directory&style=flat-square&color=blueviolet&label=Views)
+![](https://komarev.com/ghpvc/?username=diamalab-covid19_vaccination&style=flat-square&color=blueviolet&label=Views)
 
