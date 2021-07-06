@@ -1,11 +1,20 @@
 # Covid Vaccination Directory
 
-## What is Covid Vaccination Directory/Portal?
+
+## Table of Contents
+1. [What is Covid Vaccination Directory](#what-is-covid-vaccination-directory)
+2. [Author(s)](#authors)
+3. [Stack](#stack)
+4. [Description](#description)
+5. [ER Diagram](#er-diagram)
+
+
+## What is Covid Vaccination Directory
 Covid Vaccination Portal is a Database web application that maintains the record of current vaccination data across US and individual user data about his vaccination records.
 
 Designed in a way that the codebase can be easily extended and additional features such as analytics can be added.
 
-## Author(s)
+## Authors
 - Gnanamanickam Arumugaperumal
 - Sharat Naik
 - Ashwin Srivatsa
