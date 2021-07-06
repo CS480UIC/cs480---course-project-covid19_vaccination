@@ -7,8 +7,10 @@ Designed in a way that the codebase can be easily extended and additional featur
 
 ## Stack
 - Java
-- JDBC
 - SQL database
+- JDBC
+- Tomcat Apache server
+
 <!-- ## Features
 - Dashboard 
 - Authentication and Administration (Login and Authorizartion)
