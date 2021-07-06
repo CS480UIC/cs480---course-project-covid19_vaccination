@@ -41,15 +41,7 @@ There is also information about the type of vaccine and the possible side effect
   python core\manange.py runserver
   ```
 5. Open https://localhost:8000/ in browser to start using the Covid-Directory.
-  ## REST API Endpoints:
-  ### Add and Fetch Patient information
-  ```/api/patientinfo```
-  
-  Methods: **GET**, **POST**
-
-  ### Add, fetch and determine Eligibility Screening
-  ```/api/screen``` -->
   
 
-![](https://komarev.com/ghpvc/?username=diamalab-cs480---course-project-covid19_vaccination&style=flat-square&color=blueviolet&label=Views)
+<!-- ![](https://komarev.com/ghpvc/?username=diamalab-cs480---course-project-covid19_vaccination&style=flat-square&color=blueviolet&label=Views) -->
 
