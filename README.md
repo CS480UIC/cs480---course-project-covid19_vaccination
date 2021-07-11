@@ -44,6 +44,8 @@ There is also information about the type of vaccine and the possible side effect
 ## ER Diagram
 ![Screenshot 2021-07-06 at 10 39 32](https://user-images.githubusercontent.com/35519401/124619430-a6a76f80-de46-11eb-8630-79ea3dd5927a.png)
 
+## Please refer to Project outline document under Documentation for detailed overview of the project.
+
 
 <!-- ## How to build it?
 1. Clone this repository in your local machine.
