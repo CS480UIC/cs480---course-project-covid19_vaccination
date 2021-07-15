@@ -12,7 +12,7 @@ create table user(
 ssn int,
 name char(100) not null,
 phone_number bigint not null,
-email char(100) not null,
+email varchar(100) not null,
 password char(100) not null,
 county char(100),
 state char(100),
