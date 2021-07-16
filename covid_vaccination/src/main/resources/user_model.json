@@ -69,7 +69,7 @@
 					"raw": "    {\r\n        \"ssn\": 234578,\r\n        \"name\": \"user3\",\r\n        \"phone_number\": 3456728901,\r\n        \"email\": \"abc@gmail.com\",\r\n        \"password\": \"Barcelonaa1\",\r\n        \"county\": \"cook\",\r\n        \"state\": \"Illinois\"\r\n    }"
 				},
 				"url": {
-					"raw": "localhost:8080/api/user/234578",
+					"raw": "localhost:8080/api/user/{ssn}}",
 					"host": [
 						"localhost"
 					],
@@ -99,7 +99,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:8080/api/user/234578",
+					"raw": "localhost:8080/api/user/{ssn}",
 					"host": [
 						"localhost"
 					],
