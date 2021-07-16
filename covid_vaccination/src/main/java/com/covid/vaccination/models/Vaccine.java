@@ -6,12 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vaccination_entity")
-public class Vaccination {
+@Table(name="vaccine")
+public class Vaccine {
 
     @Id
     @Column(name="id")
-    public long id;
+    public int id;
     @Column(name="vaccine_name")
     public String vaccine_name;
     @Column(name="doses")
@@ -19,14 +19,14 @@ public class Vaccination {
     @Column(name="type")
     public String type;
 
-    public Vaccination(long id, String vaccine_name, int doses, String type) {
+    public Vaccine(int id, String vaccine_name, int doses, String type) {
         this.id = id;
         this.vaccine_name = vaccine_name;
         this.doses = doses;
         this.type = type;
     }
 
-    public Vaccination(){
+    public Vaccine(){
 
     }
 
@@ -35,7 +35,7 @@ public class Vaccination {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
