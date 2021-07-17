@@ -1,5 +1,9 @@
+
+create database covid_vaccination;
+
 use covid_vaccination;
 
+/* table vaccine*/
 create table vaccine(
 id int auto_increment,
 vaccine_name varchar(100) not null,
@@ -8,6 +12,7 @@ type varchar(100),
 primary key(id)
 );
 
+/* table user */
 create table user(
 ssn int,
 name char(100) not null,
@@ -19,6 +24,7 @@ state char(100),
 primary key(ssn)
 );
 
+/* table vaccine_center */
 create table vaccination_center(
 id int,
 name char(100),
@@ -28,6 +34,7 @@ vaccinated int,
 primary key(id)
 );
 
+/* table receiver */
 create table receiver(
 id varchar(5),
 user_id int,
@@ -39,6 +46,7 @@ foreign key(vaccine_id) references vaccine(id) on delete cascade on update casca
 foreign key(center_id) references vaccination_center(id) on delete cascade on update cascade
 );
 
+/*table side effects */
 create table side_effects (
 `index` int auto_increment,
 user_id int,
@@ -48,8 +56,9 @@ duration int,
 primary key(`index`),
 foreign key(user_id) references user(ssn) on delete cascade on update cascade,
 foreign key(vaccine_id) references vaccine(id) on delete cascade on update cascade
-)
+);
 
+/* table stock */
 create table stock(
 stock_id varchar(5),
 vaccine_id int,
@@ -84,3 +93,13 @@ insert into receiver values("rec13",22312,1001,103);
 insert into stock values("sto11",1002,103,600000);
 insert into stock values("sto12",1002,101,600000);
 insert into stock values("sto13",1001,102,600000);
+
+
+
+
+
+
+
+
+
+

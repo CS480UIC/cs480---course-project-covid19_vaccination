@@ -1,8 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { Button, CssBaseline, TextField, Link, Grid, Typography, makeStyles, Container} from '@material-ui/core';
+import Axios from 'axios';
 
 export default function SignUp() {
+  const url="http://localhost:8080/api/user"
     const classes = useStyles();
+    const [state, setState] = useState({
+        email: "",
+        password: "",
+        firstName: "",
+        phonenumber:"",
+        ssn: "",
+        state: "",
+        county: "",
+      });
+
+      const handleInputChange = (event) => {
+        setState((prevProps) => ({
+          ...prevProps,
+          [event.target.name]: event.target.value
+        }));
+      };
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        Axios.post(url,{
+          ssn: parseInt(state.ssn),
+          name: state.firstName,
+          phone_number: parseInt(state.phonenumber),
+          email: state.email,
+          password: state.password,
+          county: state.county,
+          state: state.state
+
+        })
+        .then(res =>{
+          this.props.history.push("/Dashboard"); 
+        })
+        
+      };
   
     return (
       <Container component="main" maxWidth="xs">
@@ -22,18 +58,20 @@ export default function SignUp() {
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  onChange={handleInputChange}
                   autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   variant="outlined"
-                  required
                   fullWidth
                   id="lastName"
                   label="Last Name"
                   name="lastName"
+                  onChange={handleInputChange}
                   autoComplete="lname"
+
                 />
               </Grid>
               <Grid item xs={12}>
@@ -44,6 +82,7 @@ export default function SignUp() {
                   id="email"
                   label="Email Address"
                   name="email"
+                  onChange={handleInputChange}
                   autoComplete="email"
                 />
               </Grid>
@@ -56,11 +95,64 @@ export default function SignUp() {
                   label="Password"
                   type="password"
                   id="password"
+                  onChange={handleInputChange}
                   autoComplete="current-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="phonenumber"
+                  label="phone number"
+                  id="phone number"
+                  onChange={handleInputChange}
+                  autoComplete="phonenumber"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="ssn"
+                  label="ssn"
+                  type="ssn"
+                  id="ssn"
+                  onChange={handleInputChange}
+                  autoComplete="ssn"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="state"
+                  label="state"
+                  type="state"
+                  id="state"
+                  onChange={handleInputChange}
+                  autoComplete="state"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="county"
+                  label="county"
+                  type="county"
+                  id="county"
+                  onChange={handleInputChange}
+                  autoComplete="county"
                 />
               </Grid>
             </Grid>
             <Button
+              onClick={handleSubmit}
               type="submit"
               fullWidth
               variant="contained"
