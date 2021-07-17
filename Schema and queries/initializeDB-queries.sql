@@ -29,7 +29,7 @@ primary key(id)
 );
 
 create table receiver(
-id int auto_increment,
+id varchar(5),
 user_id int,
 vaccine_id int,
 center_id int,
@@ -51,7 +51,7 @@ foreign key(vaccine_id) references vaccine(id) on delete cascade on update casca
 )
 
 create table stock(
-stock_id int auto_increment,
+stock_id varchar(5),
 vaccine_id int,
 center_id int,
 stock bigint,
@@ -73,14 +73,14 @@ insert into vaccination_center values (101,"center1","cook","Illinois",5000);
 insert into vaccination_center values (102,"center2","cook","Illinois",5000);
 insert into vaccination_center values (103,"center3","cook","Illinois",5000);
 
-insert into receiver(user_id,vaccine_id,center_id) values(22312,1001,103);
-insert into receiver(user_id,vaccine_id,center_id) values(22313,1002,101);
-insert into receiver(user_id,vaccine_id,center_id) values(22312,1001,103);
-
 insert into side_effects(user_id,vaccine_id,side_effect,duration) values(22312,1001,"Body pain",24);
 insert into side_effects(user_id,vaccine_id,side_effect,duration) values(22312,1001,"Headache",24);
 insert into side_effects(user_id,vaccine_id,side_effect,duration) values(22313,1002,"Body pain",24);
 
-insert into stock(vaccine_id,center_id,stock) values(1002,103,600000);
-insert into stock(vaccine_id,center_id,stock) values(1002,101,600000);
-insert into stock(vaccine_id,center_id,stock) values(1001,102,600000);
+insert into receiver values("rec11",22312,1001,103);
+insert into receiver values("rec12",22313,1002,101);
+insert into receiver values("rec13",22312,1001,103);
+
+insert into stock values("sto11",1002,103,600000);
+insert into stock values("sto12",1002,101,600000);
+insert into stock values("sto13",1001,102,600000);
