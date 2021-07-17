@@ -16,7 +16,7 @@ public class UserController {
 
     @RequestMapping(value = "/user",method = RequestMethod.GET)
     public List<User> getAllUsers(){
-        return userservice.getALlUsers();
+        return userservice.getAllUsers();
     }
 
     @RequestMapping(value="/user/{id}",method=RequestMethod.GET)

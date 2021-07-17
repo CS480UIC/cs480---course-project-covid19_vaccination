@@ -17,14 +17,14 @@ public class UserService {
     private UserRepository userRepository;
 
 
-    public List<User> getALlUsers() {
-        List<User> userList= userRepository.getAllUsersInDatabase();
+    public List<User> getAllUsers() {
+        List<User> userList= userRepository.getAllUsersRep();
         return userList;
     }
 
     public User getUserById(String id) {
         int user_id=Integer.parseInt(id);
-        User user = userRepository.getUserByIdInDatabase(user_id);
+        User user = userRepository.getUserByIdRep(user_id);
         return user;
     }
 
@@ -36,12 +36,12 @@ public class UserService {
     @Transactional
     public void updateUser(User user, String id) {
         int user_id=Integer.parseInt(id);
-        userRepository.updateDatabase(user.getName(),user.getPhone_number(),user.getEmail(),user.getCounty(),user.getPassword(),user.getState(),user_id);
+        userRepository.updateUserRep(user.getName(),user.getPhone_number(),user.getEmail(),user.getCounty(),user.getPassword(),user.getState(),user_id);
     }
 
     @Transactional
     public void deleteUser(String id) {
         int user_id=Integer.parseInt(id);
-        userRepository.deleteFromDatabase(user_id);
+        userRepository.deleteUserRep(user_id);
     }
 }
