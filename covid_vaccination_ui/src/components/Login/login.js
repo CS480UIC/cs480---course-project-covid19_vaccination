@@ -1,8 +1,25 @@
 import React from 'react';
+import axios from 'axios';
 import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Typography, makeStyles, Container} from '@material-ui/core';
 
 export default function Login() {
+
     const classes = useStyles();
+    const [state, setState] = useState({
+        email: "",
+        password: ""
+      });
+
+      const handleInputChange = (event) => {
+        setState((prevProps) => ({
+          ...prevProps,
+          [event.target.name]: event.target.value
+        }));
+      };
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+      };
 
     return (
         <Container component="main" maxWidth="xs">
@@ -21,6 +38,8 @@ export default function Login() {
                         label="Email Address"
                         name="email"
                         autoComplete="email"
+                        // value={state.email}
+                        onChange={handleInputChange}
                         autoFocus
                     />
                     <TextField
@@ -32,13 +51,15 @@ export default function Login() {
                         label="Password"
                         type="password"
                         id="password"
+                        // value={state.password}
+                        onChange={handleInputChange}
                         autoComplete="current-password"
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
                         label="Remember me"
                     />
-                    <Button
+                    <Button onClick={handleSubmit}
                         type="submit"
                         fullWidth
                         variant="contained"
@@ -54,7 +75,7 @@ export default function Login() {
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="#" variant="body1">
+                            <Link to="/signUp" variant="body1">
                                 {"Don't have an account? Sign Up"}
                             </Link>
                         </Grid>

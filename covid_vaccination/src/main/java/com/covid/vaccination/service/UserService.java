@@ -21,6 +21,11 @@ public class UserService {
         List<User> userList= userRepository.getAllUsersRep();
         return userList;
     }
+    
+    public User getLoginDetails(String email, String password) {
+        User user= userRepository.getLoginDetails(email, password);
+        return user;
+    }
 
     public User getUserById(String id) {
         int user_id=Integer.parseInt(id);

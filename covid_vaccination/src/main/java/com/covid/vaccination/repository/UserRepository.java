@@ -15,18 +15,22 @@ public interface UserRepository extends CrudRepository<User,Integer> {
     String query1="select * from user";
     @Query(nativeQuery = true, value = query1)
     List<User> getAllUsersRep();
+    
+    String query2="select * from user where email=?1 and password=?2";
+    @Query(nativeQuery = true, value = query1)
+    User getLoginDetails(String email, String password);
 
-    String query2="select * from user where ssn=?1";
+    String query3="select * from user where ssn=?1";
     @Query(nativeQuery = true, value=query2)
     User getUserByIdRep(int user_id);
 
-    String query3="update user set name=?1,phone_number=?2,email=?3,county=?4,password=?5,state=?6 where ssn=?7";
+    String query4="update user set name=?1,phone_number=?2,email=?3,county=?4,password=?5,state=?6 where ssn=?7";
     @Modifying
     @Query(nativeQuery = true,value = query3)
     void updateUserRep(String name, long phone_number, String email, String county, String password,String state, int id);
 
 
-    String query4="delete from user where ssn =?1";
+    String query5="delete from user where ssn =?1";
     @Modifying
     @Query(nativeQuery = true,value=query4)
     void deleteUserRep(int id);
