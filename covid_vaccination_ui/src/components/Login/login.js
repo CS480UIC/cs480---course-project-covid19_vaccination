@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import Axios from 'axios';
 import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Typography, makeStyles, Container} from '@material-ui/core';
 
 
 export default function Login() {
 
+    const url="http://localhost:8080/api/getLogin";
     const classes = useStyles();
     const [state, setState] = useState({
         email: "",
@@ -20,6 +21,11 @@ export default function Login() {
 
       const handleSubmit = (event) => {
         event.preventDefault();
+        Axios.get(url + "/" + state.email + "/" + state.password)
+        .then(res =>{
+        //   this.props.history.push("/home"); 
+        window.location.href = '/home';
+        })
       };
 
     return (

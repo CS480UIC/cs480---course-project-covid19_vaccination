@@ -37,6 +37,8 @@ export default function SignUp() {
         })
         .then(res =>{
           window.location = '/delete';
+        //   this.props.history.push("/home"); 
+       // window.location.href = '/home';
         })
         
       };
