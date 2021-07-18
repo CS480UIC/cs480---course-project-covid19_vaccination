@@ -17,16 +17,16 @@ public interface UserRepository extends CrudRepository<User,Integer> {
     List<User> getAllUsersRep();
     
     String query2="select * from user where email=?1 and password=?2";
-    @Query(nativeQuery = true, value = query1)
+    @Query(nativeQuery = true, value = query2)
     User getLoginDetails(String email, String password);
 
     String query3="select * from user where ssn=?1";
-    @Query(nativeQuery = true, value=query2)
+    @Query(nativeQuery = true, value=query3)
     User getUserByIdRep(int user_id);
 
     String query4="update user set name=?1,phone_number=?2,email=?3,county=?4,password=?5,state=?6 where ssn=?7";
     @Modifying
-    @Query(nativeQuery = true,value = query3)
+    @Query(nativeQuery = true,value = query4)
     void updateUserRep(String name, long phone_number, String email, String county, String password,String state, int id);
 
 
