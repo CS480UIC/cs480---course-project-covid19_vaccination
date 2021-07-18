@@ -5,6 +5,8 @@ import Login from "./components/Login/login";
 import Header from "./components/Header/header";
 import SignUp from "./components/Login/signup";
 import Home from "./components/Home/home";
+import Delete from "./components/Login/delete";
+import { DeleteForeverOutlined } from "@material-ui/icons";
 
 const App = () => {
 
@@ -22,6 +24,9 @@ const App = () => {
                 </Route>
                 <Route exact path="/home">
                   <Home />
+                </Route>
+                <Route exact path="/delete">
+                  <Delete />
                 </Route>
               </Switch>
             </div>

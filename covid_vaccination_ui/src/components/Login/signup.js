@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, CssBaseline, TextField, Link, Grid, Typography, makeStyles, Container} from '@material-ui/core';
 import Axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 export default function SignUp() {
   const url="http://localhost:8080/api/user"
@@ -35,8 +36,9 @@ export default function SignUp() {
 
         })
         .then(res =>{
+          window.location = '/delete';
         //   this.props.history.push("/home"); 
-        window.location.href = '/home';
+       // window.location.href = '/home';
         })
         
       };

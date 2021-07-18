@@ -47,6 +47,7 @@ public class UserService {
     @Transactional
     public void deleteUser(String id) {
         int user_id=Integer.parseInt(id);
+        System.out.println(user_id);
         userRepository.deleteUserRep(user_id);
     }
 }
