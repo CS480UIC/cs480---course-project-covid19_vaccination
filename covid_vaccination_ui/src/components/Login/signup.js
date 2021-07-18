@@ -35,7 +35,7 @@ export default function SignUp() {
 
         })
         .then(res =>{
-          this.props.history.push("/Dashboard"); 
+          this.props.history.push("/home"); 
         })
         
       };
@@ -105,7 +105,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="phonenumber"
-                  label="phone number"
+                  label="Phone Number"
                   id="phone number"
                   onChange={handleInputChange}
                   autoComplete="phonenumber"
@@ -117,37 +117,37 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="ssn"
-                  label="ssn"
+                  label="SSN"
                   type="ssn"
                   id="ssn"
                   onChange={handleInputChange}
                   autoComplete="ssn"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="state"
-                  label="state"
-                  type="state"
-                  id="state"
-                  onChange={handleInputChange}
-                  autoComplete="state"
-                />
-              </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   variant="outlined"
                   required
                   fullWidth
                   name="county"
-                  label="county"
+                  label="County"
                   type="county"
                   id="county"
                   onChange={handleInputChange}
                   autoComplete="county"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="state"
+                  label="State"
+                  type="state"
+                  id="state"
+                  onChange={handleInputChange}
+                  autoComplete="state"
                 />
               </Grid>
             </Grid>
@@ -177,7 +177,7 @@ export default function SignUp() {
   const useStyles = makeStyles((theme) => ({
 
     paper: {
-        marginTop: theme.spacing(25),
+        marginTop: theme.spacing(15),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

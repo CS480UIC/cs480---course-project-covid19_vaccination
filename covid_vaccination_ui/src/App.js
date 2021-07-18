@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/login";
 import Header from "./components/Header/header";
 import SignUp from "./components/Login/signup";
-import Dashboard from "./components/Login/Dashboard";
+import Home from "./components/Home/home";
 
 const App = () => {
 
@@ -19,6 +19,9 @@ const App = () => {
                 </Route>
                 <Route exact path="/signUp">
                   <SignUp />
+                </Route>
+                <Route exact path="/home">
+                  <Home />
                 </Route>
               </Switch>
             </div>
