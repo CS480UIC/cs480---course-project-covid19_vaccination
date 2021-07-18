@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, CssBaseline, TextField, Link, Grid, Typography, makeStyles, Container} from '@material-ui/core';
 import Axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 export default function SignUp() {
   const url="http://localhost:8080/api/user"
@@ -172,6 +173,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
           </form>
+          <NavLink to="/update_user"> update </NavLink>
         </div>
       </Container>
     );

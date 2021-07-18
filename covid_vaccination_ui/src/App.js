@@ -5,8 +5,10 @@ import Login from "./components/Login/login";
 import Header from "./components/Header/header";
 import SignUp from "./components/Login/signup";
 import Home from "./components/Home/home";
-import Delete from "./components/Login/delete";
+import UpdateUser from "./components/Login/update._user";
 import { DeleteForeverOutlined } from "@material-ui/icons";
+import Receiver from "./components/Receiver/receiver";
+import UpdateReceiver from "./components/Receiver/update._receiver";
 
 const App = () => {
 
@@ -25,9 +27,17 @@ const App = () => {
                 <Route exact path="/home">
                   <Home />
                 </Route>
-                <Route exact path="/delete">
-                  <Delete />
+                <Route exact path="/receiver">
+                  <Receiver />
                 </Route>
+                <Route exact path="/update_user">
+                  <UpdateUser />
+                </Route>
+                <Route exact path="/update_receiver">
+                  <UpdateReceiver />
+                </Route>
+                
+
               </Switch>
             </div>
           </Router>
