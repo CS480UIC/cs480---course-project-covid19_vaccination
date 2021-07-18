@@ -35,7 +35,8 @@ export default function SignUp() {
 
         })
         .then(res =>{
-          this.props.history.push("/home"); 
+        //   this.props.history.push("/home"); 
+        window.location.href = '/home';
         })
         
       };
