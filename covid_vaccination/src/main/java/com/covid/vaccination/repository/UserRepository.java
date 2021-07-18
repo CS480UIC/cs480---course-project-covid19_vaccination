@@ -32,6 +32,6 @@ public interface UserRepository extends CrudRepository<User,Integer> {
 
     String query5="delete from user where ssn =?1";
     @Modifying
-    @Query(nativeQuery = true,value=query4)
+    @Query(nativeQuery = true,value=query5)
     void deleteUserRep(int id);
 }
