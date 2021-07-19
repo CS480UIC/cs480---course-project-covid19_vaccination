@@ -48,6 +48,7 @@ export default function SignUp() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
+        <NavLink to="/update_user"> Show all users </NavLink>
         <Typography color='primary' display='block' component="h1" variant="h5">
             Sign up
           </Typography>
@@ -173,7 +174,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
           </form>
-          <NavLink to="/update_user"> update </NavLink>
+          
         </div>
       </Container>
     );
