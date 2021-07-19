@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/vaccinecenter")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class VaccineCenterController {
 
 //    @Autowired
