@@ -9,6 +9,8 @@ import UpdateUser from "./components/Login/update._user";
 import { DeleteForeverOutlined } from "@material-ui/icons";
 import Receiver from "./components/Receiver/receiver";
 import UpdateReceiver from "./components/Receiver/update._receiver";
+import Vaccination from "./components/Vaccination/vaccination"
+import VaccinationUpdate from "./components/Vaccination/vaccine_update.js"
 
 const App = () => {
 
@@ -35,6 +37,12 @@ const App = () => {
                 </Route>
                 <Route exact path="/update_receiver">
                   <UpdateReceiver />
+                </Route>
+                <Route exact path="/vaccination">
+                  <Vaccination />
+                </Route>
+                <Route exact path="/vaccine_update">
+                  <VaccinationUpdate />
                 </Route>
                 
 
