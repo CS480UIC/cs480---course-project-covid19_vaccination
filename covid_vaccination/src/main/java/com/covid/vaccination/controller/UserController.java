@@ -18,7 +18,6 @@ import com.covid.vaccination.service.UserService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     @Autowired
