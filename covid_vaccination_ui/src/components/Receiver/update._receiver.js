@@ -46,10 +46,12 @@ export default class PostList extends React.Component {
               <tbody>
                 {this.state.posts.map((post) => (
                   <tr>
-                    <td>{post.user_id}</td>
-                    <td>{post.vaccine_id}</td>
+                    <td contentEditable='true'>{post.user_id}</td>
+                    <td contentEditable='true'>{post.vaccine_id}</td>
+                    <td contentEditable='true'>{post.center_id}</td>
                     <td>
                       <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.id, e)}>Delete</button>
+                      <button className="btn btn-danger">update</button>
                     </td>
                   </tr>
                 ))}

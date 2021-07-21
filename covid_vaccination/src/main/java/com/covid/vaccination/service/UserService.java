@@ -9,13 +9,25 @@ import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 
 import javax.transaction.Transactional;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.security.MessageDigest;
 
 @Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public String hashPassword(String password){
+        MessageDigest messageDigest = null;
+        try {
+            messageDigest = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        messageDigest.update(password.getBytes());
+        return new String(messageDigest.digest());
+    }
 
     public List<User> getAllUsers() {
         List<User> userList= userRepository.getAllUsersRep();
@@ -34,7 +46,8 @@ public class UserService {
     }
 
     public void addUser(User user) {
-        System.out.println(user.getName());
+        user.setPassword(hashPassword(user.getPassword()));
+        System.out.println(user.getPassword());
         userRepository.save(user);
     }
 

@@ -5,10 +5,12 @@ import Login from "./components/Login/login";
 import Header from "./components/Header/header";
 import SignUp from "./components/Login/signup";
 import Home from "./components/Home/home";
-import UpdateUser from "./components/Login/update._user";
+import UpdateUser from "./components/Login/update_user1";
 import { DeleteForeverOutlined } from "@material-ui/icons";
 import Receiver from "./components/Receiver/receiver";
 import UpdateReceiver from "./components/Receiver/update._receiver";
+import Vaccination from "./components/Vaccination/vaccination"
+import VaccinationUpdate from "./components/Vaccination/vaccine_update"
 
 const App = () => {
 
@@ -30,11 +32,17 @@ const App = () => {
                 <Route exact path="/receiver">
                   <Receiver />
                 </Route>
-                <Route exact path="/update_user">
+                <Route exact path="/update_user1">
                   <UpdateUser />
                 </Route>
                 <Route exact path="/update_receiver">
                   <UpdateReceiver />
+                </Route>
+                <Route exact path="/vaccination">
+                  <Vaccination />
+                </Route>
+                <Route exact path="/vaccine_update">
+                  <VaccinationUpdate />
                 </Route>
                 
 

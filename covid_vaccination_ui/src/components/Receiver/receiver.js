@@ -22,7 +22,6 @@ export default function Receiver() {
       };
 
       const handleSubmit = (event) => {
-        event.preventDefault();
         console.log(state.receiverId)
         Axios.post(url,{
           id: state.receiverId,
@@ -42,6 +41,7 @@ export default function Receiver() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
+        <NavLink to="/update_receiver"> Show all receivers </NavLink>
         <Typography color='primary' display='block' component="h1" variant="h5">
             Receiver
           </Typography>
@@ -107,7 +107,7 @@ export default function Receiver() {
 
           </form>
 
-          <NavLink to="/update_receiver"> update </NavLink>
+          
         </div>
       </Container>
     );

@@ -3,11 +3,18 @@ import { Button, CssBaseline, TextField, Link, Grid, Typography, makeStyles, Con
 import axios from 'axios';
 export default class PostList extends React.Component {
     state = {
-      posts: []
+      posts: [],
+      values: [],
+      vaccine_name:"",
+      dose:""
     }
+
+    
+
+
     
     componentDidMount() {
-      axios.get(`http://localhost:8080/api/user`)
+      axios.get(`http://localhost:8080/api/vaccine`)
         .then(res => {
           
           const posts = res.data;
@@ -19,13 +26,25 @@ export default class PostList extends React.Component {
     
     deleteRow(id, e){
         console.log(id)
-      axios.delete(`http://localhost:8080/api/user/${id}`)
+      axios.delete(`http://localhost:8080/api/vaccine/${id}`)
         .then(res => {
           console.log(res);
           console.log(res.data);
           const posts = this.state.posts.filter(item => item.id !== id);
           this.setState({ posts });
         })
+    
+    }
+
+    updateRow(id, e){
+        console.log(id)
+      axios.put(`http://localhost:8080/api/vaccine/${id}`,{
+         
+      })
+      .then(res=>{
+        
+      })
+
     
     }
     
@@ -38,18 +57,18 @@ export default class PostList extends React.Component {
               <thead>
                 <tr>
                     <th>Name</th>
-                    <th>email</th>
+                    <th>doses</th>
                 </tr>
               </thead>
     
               <tbody>
                 {this.state.posts.map((post) => (
                   <tr>
-                    <td contentEditable='true'>{post.name}</td>
-                    <td contentEditable='true'>{post.email}</td>
+                    <td contentEditable='true'>{post.vaccine_name}</td>
+                    <td contentEditable='true'>{post.doses}</td>
                     <td>
-                      <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.ssn, e)}>Delete</button>
-                      <button className="btn btn-danger">Update</button>
+                      <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.id, e)}>Delete</button>
+                      <button className="btn btn-danger" onClick={(e) => this.updateRow(post.id, e)}>Update</button>
                     </td>
                   </tr>
                 ))}
