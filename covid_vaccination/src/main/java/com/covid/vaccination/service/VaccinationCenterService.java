@@ -18,4 +18,12 @@ public class VaccinationCenterService {
     public List<VaccinationCentre> getALlVaccinationCentersQuery() {
         return vaccinationCenterRepository.getState2();
     }
+
+    public List<VaccinationCentre> getLessVaccinatedQuery() {
+        return vaccinationCenterRepository.getLess();
+    }
+
+    public List<VaccinationCentre> getCountyHighestState(String state) {
+        return vaccinationCenterRepository.getHighest(state);
+    }
 }

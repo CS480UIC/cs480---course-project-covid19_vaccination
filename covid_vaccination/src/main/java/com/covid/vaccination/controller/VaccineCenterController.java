@@ -28,6 +28,16 @@ public class VaccineCenterController {
         return vaccinationCentreService.getALlVaccinationCentersQuery();
     }
 
+    @GetMapping
+    public List<VaccinationCentre> getLessVaccinatedQuery(){
+        return vaccinationCentreService.getLessVaccinatedQuery();
+    }
+
+    public List<VaccinationCentre> getCountyHighestState(String state){
+        return vaccinationCentreService.getCountyHighestState(state);
+    }
+
+
 
 
 }
