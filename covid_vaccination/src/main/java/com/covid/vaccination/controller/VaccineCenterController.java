@@ -18,24 +18,27 @@ public class VaccineCenterController {
 
     @Autowired
     VaccinationCenterService vaccinationCentreService;
-    @GetMapping
+    @RequestMapping(value = "/",method=RequestMethod.GET)
     public List<VaccinationCentre> getAllVaccinationCentersInState(@PathVariable String state){
         return vaccinationCentreService.getALLVaccinationCentresInState(state);
     }
 
-    @GetMapping
+    @RequestMapping(value = "/vaccinecenter/all",method=RequestMethod.GET)
     public List<VaccinationCentre> getAllCentersQuery(){
         return vaccinationCentreService.getALlVaccinationCentersQuery();
     }
 
-    @GetMapping
+    @RequestMapping(value = "/vaccinecenter/less",method=RequestMethod.GET)
     public List<VaccinationCentre> getLessVaccinatedQuery(){
         return vaccinationCentreService.getLessVaccinatedQuery();
     }
 
+    @RequestMapping(value = "/vaccinecenter/{state}",method=RequestMethod.GET)
     public List<VaccinationCentre> getCountyHighestState(String state){
         return vaccinationCentreService.getCountyHighestState(state);
     }
+
+
 
 
 
