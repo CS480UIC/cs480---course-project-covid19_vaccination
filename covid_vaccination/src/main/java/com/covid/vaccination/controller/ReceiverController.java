@@ -58,5 +58,9 @@ public class ReceiverController {
         return receiverService.getCountyWIthSideEffects();
     }
 
+    //Complex query 5
+    public List<String> getAverage(){
+        return null;
+    }
 
 }
