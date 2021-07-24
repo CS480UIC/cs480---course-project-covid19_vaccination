@@ -1,13 +1,11 @@
 package com.covid.vaccination.repository;
 
 import com.covid.vaccination.models.Receiver;
-import com.covid.vaccination.models.Vaccine;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -35,4 +33,16 @@ public interface ReceiverRepository extends CrudRepository<Receiver,Integer> {
     @Modifying
     @Query(nativeQuery = true, value = query4)
     void delete(String id);
+
+    String complex_query3="select u.name,count(r.receive_date) from user u inner join \n" +
+            "receiver r on u.ssn=r.user_id where receive_date between ?1 and ?2 group by u.name having count(r.receive_date)>=2";
+    @Query(nativeQuery = true,value=complex_query3)
+    List<String> getUsersReceivedVaccine(String start_date, String end_date);
+
+    String complex_query4="select vc.county from receiver r inner join \n" +
+            "user u on r.user_id=u.ssn inner join \n" +
+            "vaccination_center vc on r.center_id=vc.id inner join\n" +
+            "side_effects se on se.user_id=u.ssn group by vc.county order by count(side_effect) desc limit 1";
+    @Query(nativeQuery = true,value=complex_query4)
+    List<String> getCountyWithSIdeEffects();
 }
