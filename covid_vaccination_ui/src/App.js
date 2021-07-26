@@ -10,11 +10,7 @@ import { DeleteForeverOutlined } from "@material-ui/icons";
 import Receiver from "./components/Receiver/receiver";
 import UpdateReceiver from "./components/Receiver/update._receiver";
 import Vaccination from "./components/Vaccination/vaccination"
-<<<<<<< HEAD
 import VaccinationUpdate from "./components/Vaccination/vaccine_update"
-=======
-import VaccinationUpdate from "./components/Vaccination/vaccine_update.js"
->>>>>>> a422a2e5ce30883dc35b0cada924c68cd47e3817
 
 const App = () => {
 

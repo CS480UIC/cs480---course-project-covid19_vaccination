@@ -64,13 +64,8 @@ export default class PostList extends React.Component {
               <tbody>
                 {this.state.posts.map((post) => (
                   <tr>
-<<<<<<< HEAD
                     <td contentEditable='true'>{post.vaccine_name}</td>
                     <td contentEditable='true'>{post.doses}</td>
-=======
-                    <td><input type="text" value={post.vaccine_name} onChange={this.setState}></input></td>
-                    <td><input type="text" value={post.doses} onChange={this.setState}></input></td>
->>>>>>> a422a2e5ce30883dc35b0cada924c68cd47e3817
                     <td>
                       <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.id, e)}>Delete</button>
                       <button className="btn btn-danger" onClick={(e) => this.updateRow(post.id, e)}>Update</button>

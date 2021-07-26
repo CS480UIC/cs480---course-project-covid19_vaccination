@@ -47,11 +47,7 @@ export default function SignUp() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-<<<<<<< HEAD
         <NavLink to="/update_user1"> Show all users </NavLink>
-=======
-        <NavLink to="/update_user"> Show all users </NavLink>
->>>>>>> a422a2e5ce30883dc35b0cada924c68cd47e3817
         <Typography color='primary' display='block' component="h1" variant="h5">
             Sign up
           </Typography>

@@ -8,13 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-<<<<<<< HEAD
 @CrossOrigin
 @RequestMapping("/api")
-=======
-@RequestMapping("/vaccine")
-@CrossOrigin(origins = "http://localhost:3000")
->>>>>>> a422a2e5ce30883dc35b0cada924c68cd47e3817
 public class VaccineController {
 
 	@Autowired
