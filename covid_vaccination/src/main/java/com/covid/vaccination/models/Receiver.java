@@ -19,6 +19,8 @@ public class Receiver {
     int vaccine_id;
     @Column(name = "center_id")
     int center_id;
+    @Column(name="receive_date")
+    String receive_date;
 
     public Receiver(String id, int user_id, int vaccine_id, int center_id) {
         this.id = id;

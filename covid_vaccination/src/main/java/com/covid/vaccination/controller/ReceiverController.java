@@ -40,7 +40,27 @@ public class ReceiverController {
     @RequestMapping(value="/receiver/{id}",method=RequestMethod.DELETE)
     public void deleteReceiver(@PathVariable String id){
         receiverService.deleteReceiver(id);
+
     }
 
+    //Complex query 3
+    //Get the names of users who have received both th doses of vaccines in the given month.
+    @RequestMapping(value="/complex_query3/{month}" , method=RequestMethod.GET)
+    public List<String> getUsersReceivedVaccine(@PathVariable String month){
+        return receiverService.getUsresreceivedVaccine(month);
+
+    }
+
+    //Complex query 4
+    //Get the county where the people have had the maximum side effects after taking the vaccine.
+    @RequestMapping(value="/complex_query4",method=RequestMethod.GET)
+    public List<String> getCountyWithSideEffects(){
+        return receiverService.getCountyWIthSideEffects();
+    }
+
+    //Complex query 5
+    public List<String> getAverage(){
+        return null;
+    }
 
 }

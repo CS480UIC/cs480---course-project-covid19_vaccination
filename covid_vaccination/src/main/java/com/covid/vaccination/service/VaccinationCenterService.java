@@ -11,6 +11,9 @@ import java.util.List;
 public class VaccinationCenterService {
     @Autowired
     VaccinationCenterRepository vaccinationCenterRepository;
+
+
+
     public List<VaccinationCentre> getALLVaccinationCentresInState(String state) {
         return vaccinationCenterRepository.getState(state);
     }
@@ -26,4 +29,5 @@ public class VaccinationCenterService {
     public List<VaccinationCentre> getCountyHighestState(String state) {
         return vaccinationCenterRepository.getHighest(state);
     }
+
 }
