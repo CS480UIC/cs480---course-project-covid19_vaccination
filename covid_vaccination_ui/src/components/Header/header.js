@@ -64,7 +64,21 @@ export const Header = (props) => {
                 Register
             </Button>  
         </a>
-        {/* <button href="/signUp"> {'Register'}</button> */}
+        <br>
+            
+        </br>
+        <br></br>
+        <div>
+            <Button href='/vaccination' variant="contained" color="secondary">
+                    Add Vaccine
+            </Button> 
+            {/* <Button href='/vaccination' variant="contained" color="primary">
+                Add Vaccination Centre
+            </Button>  */}
+            <Button href='/receiver' variant="contained" color="secondary">
+                Add Receiver
+            </Button> 
+        </div>
       </Container>
     </section>
       
@@ -132,7 +146,7 @@ const useStyles = makeStyles((theme) => ({
 
     title: {
         fontSize: 24,
-        color: theme.palette.common.black
+        color: theme.palette.common.black,
       },
       toolbar: {
         justifyContent: 'space-between',
@@ -156,9 +170,11 @@ const useStyles = makeStyles((theme) => ({
       linkSecondary: {
         color: theme.palette.secondary.main,
       },
-      button: {
+      butt: {
         color: theme.palette.common.main,
         backgroundColor: theme.palette.common.blue,
+        marginLeft: theme.spacing(5),
+        marginRight: theme.spacing(5),
       },
 
     // root: {

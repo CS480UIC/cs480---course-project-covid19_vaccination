@@ -33,7 +33,9 @@ export default function UpdateUser() {
             <thead>
               <tr>
                   <th>Name</th>
-                  <th>email</th>
+                  <th>Email</th>
+                  <th>Phone number</th>
+                  <th>SSN</th>
               </tr>
             </thead>
   
@@ -42,6 +44,8 @@ export default function UpdateUser() {
                 <tr>
                   <td contentEditable='true'>{post.name}</td>
                   <td contentEditable='true'>{post.email}</td>
+                  <td contentEditable='true'>{post.phone_number}</td>
+                  <td contentEditable='true'>{post.ssn}</td>
                   <td>
                     <button className="btn btn-danger" onClick={(e) => deleteRow(post.ssn, e)}>Delete</button>
                     <button className="btn btn-danger">Update</button>

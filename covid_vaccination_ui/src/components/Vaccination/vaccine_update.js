@@ -58,6 +58,7 @@ export default class PostList extends React.Component {
                 <tr>
                     <th>Name</th>
                     <th>doses</th>
+                    <th>type</th>
                 </tr>
               </thead>
     
@@ -66,6 +67,7 @@ export default class PostList extends React.Component {
                   <tr>
                     <td contentEditable='true'>{post.vaccine_name}</td>
                     <td contentEditable='true'>{post.doses}</td>
+                    <td contentEditable='true'>{post.type}</td>
                     <td>
                       <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.id, e)}>Delete</button>
                       <button className="btn btn-danger" onClick={(e) => this.updateRow(post.id, e)}>Update</button>
