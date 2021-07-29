@@ -18,7 +18,7 @@ public class VaccinationCenterService {
         return vaccinationCenterRepository.getState(state);
     }
 
-    public List<VaccinationCentre> getALlVaccinationCentersQuery() {
+    public String getALlVaccinationCentersQuery() {
         return vaccinationCenterRepository.getState2();
     }
 

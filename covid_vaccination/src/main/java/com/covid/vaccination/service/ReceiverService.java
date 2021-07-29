@@ -60,4 +60,8 @@ public class ReceiverService {
         return receiverRepository.getCountyWithSIdeEffects();
 
     }
+
+    public List<String> getNoUsers(String name) {
+        return receiverRepository.getNoUsers(name);
+    }
 }
