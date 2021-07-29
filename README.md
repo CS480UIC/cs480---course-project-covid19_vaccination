@@ -20,9 +20,9 @@ Designed in a way that the codebase can be easily extended and additional featur
 - Ashwin Srivatsa
 
 ## Stack
-- Java
+- React.js
+- Java Spring framework
 - SQL database
-- JDBC
 - Tomcat Apache server
 
 <!-- ## Features
