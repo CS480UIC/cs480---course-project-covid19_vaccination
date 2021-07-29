@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
 import './header.css';
 import { Link } from 'react-router-dom';
-import MuiAppBar from '@material-ui/core/AppBar';
+import Container from '@material-ui/core/Container';
+import Button, { buttonClasses as classes } from '@material-ui/core/Button';
 
 export const Header = (props) => {
     const classes = useStyles();
@@ -22,7 +23,7 @@ export const Header = (props) => {
             underline="none"
             color="inherit"
             className={classes.title}
-            href="/premium-themes/onepirate/"
+            to='/'
           >
             {'Covid Vaccination Portal'}
           </Link>
@@ -47,6 +48,26 @@ export const Header = (props) => {
           </div>
         </Toolbar>
       </AppBar>
+      <section className={classes.root}>
+      <Container className={classes.container}>
+        <h1> {'Welcome to Vaccination portal'}
+        </h1>
+        <div className={classes.backdrop} />
+        <div className={classes.background} />
+        <h3> {'This portal is used to keep track of users vaccination data.'}</h3>
+        
+        <h3> {'It also keeps track of stock of different vaccines available at different vaccine centres.'}</h3>
+        <h2> {'Register below'}</h2>
+        
+        <a href="/signUp">  
+            <Button variant="contained" color="primary">
+                Register
+            </Button>  
+        </a>
+        {/* <button href="/signUp"> {'Register'}</button> */}
+      </Container>
+    </section>
+      
     </div>
         // <div className={classes.root}>
         //     <AppBar position="static" elevation={0} data-testId="header-appbar">
@@ -135,6 +156,10 @@ const useStyles = makeStyles((theme) => ({
       linkSecondary: {
         color: theme.palette.secondary.main,
       },
+      button: {
+        color: theme.palette.common.main,
+        backgroundColor: theme.palette.common.blue,
+      },
 
     // root: {
     //     fcolor: theme.palette.common.white,
@@ -155,4 +180,42 @@ const useStyles = makeStyles((theme) => ({
     //     flex: 1,
     //     justifyContent: 'flex-end',
     // },
+    root: {
+        color: theme.palette.common.white,
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        [theme.breakpoints.up('sm')]: {
+          height: '80vh',
+          minHeight: 500,
+          maxHeight: 1300,
+        },
+      },
+      container: {
+        marginTop: theme.spacing(3),
+        marginBottom: theme.spacing(14),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      backdrop: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        backgroundColor: theme.palette.common.black,
+        opacity: 0.5,
+        zIndex: -1,
+      },
+      background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        zIndex: -2,
+      },
 }));
