@@ -23,7 +23,7 @@ public class StockController {
 
     //Complex query 2
     //Get the total people in Illinois who have been vaccinated by a given vaccine.
-    @RequestMapping(value="/complex_query2",method = RequestMethod.GET)
+    @RequestMapping(value="/complex_query2/{name}",method = RequestMethod.GET)
     public List<String> sumVaccinated(@PathVariable String name){
         return stockService.getSumVaccinated(name);
     }

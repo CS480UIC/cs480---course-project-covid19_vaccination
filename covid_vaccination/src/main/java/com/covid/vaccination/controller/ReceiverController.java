@@ -44,7 +44,7 @@ public class ReceiverController {
     }
 
     //Complex query 3
-    //Get the names of users who have received both th doses of vaccines in the given month.
+    //Get the names of users who have received both the doses of vaccines in the given month.
     @RequestMapping(value="/complex_query3/{month}" , method=RequestMethod.GET)
     public List<String> getUsersReceivedVaccine(@PathVariable String month){
         return receiverService.getUsresreceivedVaccine(month);
@@ -59,8 +59,11 @@ public class ReceiverController {
     }
 
     //Complex query 5
-    public List<String> getAverage(){
-        return null;
+    //Get the names of users who have had body pain for duration greater than the average duration of all other people who have had body pain after taking a particular vaccine.
+    @RequestMapping(value="/complex_query5/{name}",method=RequestMethod.GET)
+    public List<String> getNoUsers(@PathVariable String name){
+
+        return receiverService.getNoUsers(name);
     }
 
 }
