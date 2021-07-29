@@ -20,6 +20,9 @@ const App = () => {
             <div className="app">
             {/* <Header /> */}
               <Switch>
+                <Route exact path="/">
+                  <Header />
+                </Route>
                 <Route exact path="/login">
                   <Login />
                 </Route>
