@@ -45,4 +45,14 @@ public interface ReceiverRepository extends CrudRepository<Receiver,Integer> {
             "side_effects se on se.user_id=u.ssn group by vc.county order by count(side_effect) desc limit 1";
     @Query(nativeQuery = true,value=complex_query4)
     List<String> getCountyWithSIdeEffects();
+
+    String complex_query5="select u.name from side_effects s inner join \n" +
+            "user u on s.user_id=u.ssn inner join \n" +
+            "vaccine v on s.vaccine_id=v.id\n" +
+            "where s.side_effect='Body pain' and v.vaccine_name=?1 and s.duration>\n" +
+            "(\n" +
+            "select avg(sa.duration) from side_effects sa inner join vaccine va on sa.vaccine_id=va.id where va.vaccine_name=?1\n" +
+            ")";
+    @Query(nativeQuery = true,value=complex_query5)
+    List<String> getNoUsers(String name);
 }

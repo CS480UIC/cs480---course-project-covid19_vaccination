@@ -9,7 +9,7 @@ import com.covid.vaccination.service.VaccinationCenterService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vaccinecenter")
+@RequestMapping("/api")
 @CrossOrigin
 public class VaccineCenterController {
 
@@ -18,23 +18,25 @@ public class VaccineCenterController {
 
     @Autowired
     VaccinationCenterService vaccinationCentreService;
-    @RequestMapping(value = "/",method=RequestMethod.GET)
-    public List<VaccinationCentre> getAllVaccinationCentersInState(@PathVariable String state){
-        return vaccinationCentreService.getALLVaccinationCentresInState(state);
-    }
 
-    @RequestMapping(value = "/vaccinecenter/all",method=RequestMethod.GET)
-    public List<VaccinationCentre> getAllCentersQuery(){
+    //Simple query 1
+    // Select the state which has received highest vaccination till date
+    @RequestMapping(value = "/simple_query1",method=RequestMethod.GET)
+    public String getAllCentersQuery(){
         return vaccinationCentreService.getALlVaccinationCentersQuery();
     }
 
-    @RequestMapping(value = "/vaccinecenter/less",method=RequestMethod.GET)
+    //Simple query 2
+    // List the counties which have vaccination rate less than 50%
+    @RequestMapping(value = "/simple_query2",method=RequestMethod.GET)
     public List<VaccinationCentre> getLessVaccinatedQuery(){
         return vaccinationCentreService.getLessVaccinatedQuery();
     }
 
-    @RequestMapping(value = "/vaccinecenter/{state}",method=RequestMethod.GET)
-    public List<VaccinationCentre> getCountyHighestState(String state){
+    //Simple query 3
+    // List the county which has the highest vaccination centers
+    @RequestMapping(value = "/simple_query3/{state}",method=RequestMethod.GET)
+    public List<VaccinationCentre> getCountyHighestState(@PathVariable String state){
         return vaccinationCentreService.getCountyHighestState(state);
     }
 
