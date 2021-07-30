@@ -11,6 +11,7 @@ import Receiver from "./components/Receiver/receiver";
 import UpdateReceiver from "./components/Receiver/update._receiver";
 import Vaccination from "./components/Vaccination/vaccination"
 import VaccinationUpdate from "./components/Vaccination/vaccine_update"
+import DataTable from "./components/utils/dataTable";
 
 const App = () => {
 
@@ -25,6 +26,9 @@ const App = () => {
                 </Route>
                 <Route exact path="/signUp">
                   <SignUp />
+                </Route>
+                <Route exact path="/table">
+                  <DataTable />
                 </Route>
                 <Route exact path="/home">
                   <Home />
