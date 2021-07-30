@@ -30,9 +30,9 @@ const App = () => {
                 <Route exact path="/signUp">
                   <SignUp />
                 </Route>
-                <Route exact path="/table">
+                {/* <Route exact path="/table">
                   <DataTable />
-                </Route>
+                </Route> */}
                 <Route exact path="/home">
                   <Home />
                 </Route>
