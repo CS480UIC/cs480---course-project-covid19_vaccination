@@ -68,7 +68,7 @@ export const Header = (props) => {
             
         </br>
         <br></br>
-        <div>
+        <div className={classes.butt}>
             <Button href='/vaccination' variant="contained" color="secondary">
                     Add Vaccine
             </Button> 
@@ -171,10 +171,9 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.main,
       },
       butt: {
-        color: theme.palette.common.main,
-        backgroundColor: theme.palette.common.blue,
-        marginLeft: theme.spacing(5),
-        marginRight: theme.spacing(5),
+        '& > *': {
+            margin: theme.spacing(1),
+        },
       },
 
     // root: {
@@ -196,6 +195,7 @@ const useStyles = makeStyles((theme) => ({
     //     flex: 1,
     //     justifyContent: 'flex-end',
     // },
+    
     root: {
         color: theme.palette.common.white,
         position: 'relative',
