@@ -12,6 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,7 @@ public class FetchData {
 	@Autowired
 	DataSource dataSource;
 	
-	Logger logger = (Logger) LogManager.getLogger(FetchData.class);
+	Logger logger = LoggerFactory.getLogger(FetchData.class);
 	
 	public ResponseEntity<String> fetchData(String url) {
 		RestTemplate req = new RestTemplate();
