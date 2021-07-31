@@ -42,7 +42,7 @@ Each vaccine has a unique number which can be used to track the person who has r
 There is also information about the type of vaccine and the possible side effects caused by the vaccine in each dose. Finally the user can see  the states or the counties which have the highest vaccinations received.
 
 ## ER Diagram
-![Screenshot 2021-07-06 at 10 39 32](https://user-images.githubusercontent.com/35519401/124619430-a6a76f80-de46-11eb-8630-79ea3dd5927a.png)
+![Screenshot 2021-07-06 at 10 39 32](https://github.com/diamalab/cs480---course-project-covid19_vaccination/blob/dev/Documentation/er%20-%20digram%20updated.png)
 
 ## Please refer to Project outline document under Documentation for detailed overview of the project.
 
