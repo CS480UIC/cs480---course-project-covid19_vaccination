@@ -28,6 +28,7 @@ CREATE TABLE `vaccination_center` (
   `county` char(100) DEFAULT NULL,
   `state` char(100) DEFAULT NULL,
   `vaccinated` int DEFAULT NULL,
+  `population` bigint DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +39,7 @@ CREATE TABLE `vaccination_center` (
 
 LOCK TABLES `vaccination_center` WRITE;
 /*!40000 ALTER TABLE `vaccination_center` DISABLE KEYS */;
-INSERT INTO `vaccination_center` VALUES (101,'center1','cook','Illinois',5000),(102,'center2','cook','Illinois',5000),(103,'center3','cook','Illinois',5000);
+INSERT INTO `vaccination_center` VALUES (101,'center1','cook','Illinois',5000,100000),(102,'center2','cook','Illinois',5000,100000),(103,'center3','cook','Illinois',5000,100000),(104,'center5','fort bend','Texas',10000,300000);
 /*!40000 ALTER TABLE `vaccination_center` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-16 18:46:26
+-- Dump completed on 2021-07-31 15:39:53

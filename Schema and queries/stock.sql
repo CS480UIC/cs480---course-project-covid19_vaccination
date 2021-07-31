@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stock` (
-  `stock_id` int NOT NULL AUTO_INCREMENT,
+  `stock_id` varchar(5) NOT NULL,
   `vaccine_id` int DEFAULT NULL,
   `center_id` int DEFAULT NULL,
   `stock` bigint DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `stock` (
   KEY `center_id` (`center_id`),
   CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccine` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `stock_ibfk_2` FOREIGN KEY (`center_id`) REFERENCES `vaccination_center` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (4,1002,103,600000),(5,1002,101,600000),(6,1001,102,600000);
+INSERT INTO `stock` VALUES ('sto11',1002,103,600000),('sto12',1002,101,600000),('sto13',1001,102,600000);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-16 18:46:27
+-- Dump completed on 2021-07-31 15:39:53
