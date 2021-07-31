@@ -49,8 +49,8 @@ public class ReceiverService {
         hmap.put("10","31");
         hmap.put("11","30");
         hmap.put("12","31");
-        String start_date="2021-"+month+hmap.get(month);
-        String end_date="2021-"+month+hmap.get(month);
+        String start_date="2021-"+month+"01";
+        String end_date="2021-"+month+"-"+hmap.get(month);
         System.out.println(receiverRepository.getUsersReceivedVaccine(start_date,end_date));
         return receiverRepository.getUsersReceivedVaccine(start_date,end_date);
 
