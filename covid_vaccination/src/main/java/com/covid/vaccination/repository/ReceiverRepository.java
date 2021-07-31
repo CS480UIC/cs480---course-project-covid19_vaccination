@@ -34,8 +34,8 @@ public interface ReceiverRepository extends CrudRepository<Receiver,Integer> {
     @Query(nativeQuery = true, value = query4)
     void delete(String id);
 
-    String complex_query3="select u.name,count(r.receive_date) from user u inner join \n" +
-            "receiver r on u.ssn=r.user_id where receive_date between ?1 and ?2 group by u.name having count(r.receive_date)>=2";
+    String complex_query3="select u.name from user u inner join \n" +
+            "receiver r on u.ssn=r.user_id where r.receive_date between ?1 and ?2 group by u.name having count(r.receive_date)>=2";
     @Query(nativeQuery = true,value=complex_query3)
     List<String> getUsersReceivedVaccine(String start_date, String end_date);
 

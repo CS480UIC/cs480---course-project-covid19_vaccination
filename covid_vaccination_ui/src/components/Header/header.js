@@ -79,6 +79,11 @@ export const Header = (props) => {
                 Add Receiver
             </Button> 
         </div>
+        <br></br>
+        <br></br>
+        <Button href ='/home'variant="contained" color="primary">
+             See results
+            </Button>
       </Container>
     </section>
       
