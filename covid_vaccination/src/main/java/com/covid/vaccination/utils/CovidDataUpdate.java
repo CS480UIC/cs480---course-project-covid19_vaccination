@@ -10,8 +10,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -31,7 +31,7 @@ public class CovidDataUpdate {
 	
 	@Autowired
 	CovidVaccinationDetailsRepository vaccinationRep;
-	Logger logger = LoggerFactory.getLogger(CovidDataUpdate.class);
+	Logger logger = LogManager.getLogger(CovidDataUpdate.class);
 	
 	@SuppressWarnings("unused")
 	@Scheduled(cron = "41 * * * * ?")
