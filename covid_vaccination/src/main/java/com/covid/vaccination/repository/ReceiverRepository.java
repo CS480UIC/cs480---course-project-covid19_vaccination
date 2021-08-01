@@ -16,17 +16,17 @@ public interface ReceiverRepository extends CrudRepository<Receiver,Integer> {
     @Query(nativeQuery = true, value = query1)
     List<Receiver> getFromDatabase();
 
-    String query2 = "insert into receiver values (?1,?2,?3,?4)";
+    String query2 = "insert into receiver values (?1,?2,?3,?4,?5)";
 
     @Modifying
     @Query(nativeQuery = true, value = query2)
-    void addTodatabse(String id, int user_id, int vaccine_id, int center_id);
+    void addTodatabse(String id, int user_id, int vaccine_id, int center_id,String receive_date);
 
-    String query3 = "update receiver set user_id = ?2,center_id = ?3,vaccine_id = ?4 where id = ?1";
+    String query3 = "update receiver set user_id = ?2,center_id = ?3,vaccine_id = ?4, receive_date=?5 where id = ?1";
 
     @Modifying
     @Query(nativeQuery = true, value = query3)
-    void updateDatabse(String id, int user_id, int center_id, int vaccine_id);
+    void updateDatabse(String id, int user_id, int center_id, int vaccine_id,String receive_date);
 
     String query4 = "delete from receiver where id = ?1";
 
