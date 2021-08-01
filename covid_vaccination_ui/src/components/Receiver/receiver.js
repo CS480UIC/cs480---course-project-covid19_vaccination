@@ -119,7 +119,7 @@ export default function Receiver() {
                
                   fullWidth
                   name="receive_date"
-                  label="vaccination date {yyyy/mm/dd}"
+                  label="vaccination date {yyyy-mm-dd}"
                   id="receive_date"
                   onChange={handleInputChange}
                 />

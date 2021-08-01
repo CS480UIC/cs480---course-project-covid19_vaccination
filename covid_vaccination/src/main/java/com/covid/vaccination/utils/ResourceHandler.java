@@ -9,13 +9,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ResourceHandler {
 	
-	Logger logger = (Logger) LoggerFactory.getLogger(ResourceHandler.class);
+	Logger logger = (Logger) LogManager.getLogger(ResourceHandler.class);
 	
 	static final ExecutorService executorService = Integer.getInteger("thread.count") != null
 			? Executors.newCachedThreadPool()
