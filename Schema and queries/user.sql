@@ -26,7 +26,7 @@ CREATE TABLE `user` (
   `ssn` int NOT NULL,
   `name` char(100) NOT NULL,
   `phone_number` bigint NOT NULL,
-  `email` char(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` char(100) NOT NULL,
   `county` char(100) DEFAULT NULL,
   `state` char(100) DEFAULT NULL,
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-16 18:46:27
+-- Dump completed on 2021-07-31 15:39:54

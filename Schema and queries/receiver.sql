@@ -23,10 +23,11 @@ DROP TABLE IF EXISTS `receiver`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `receiver` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` varchar(5) NOT NULL,
   `user_id` int DEFAULT NULL,
   `vaccine_id` int DEFAULT NULL,
   `center_id` int DEFAULT NULL,
+  `receive_date` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `vaccine_id` (`vaccine_id`),
@@ -34,7 +35,7 @@ CREATE TABLE `receiver` (
   CONSTRAINT `receiver_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`ssn`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `receiver_ibfk_2` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccine` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `receiver_ibfk_3` FOREIGN KEY (`center_id`) REFERENCES `vaccination_center` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +44,7 @@ CREATE TABLE `receiver` (
 
 LOCK TABLES `receiver` WRITE;
 /*!40000 ALTER TABLE `receiver` DISABLE KEYS */;
-INSERT INTO `receiver` VALUES (9,22312,1001,103),(10,22313,1002,101),(11,22312,1001,103);
+INSERT INTO `receiver` VALUES ('rec11',22312,1001,103,'2021-06-01'),('rec12',22313,1002,101,'2021-06-20'),('rec13',22312,1003,103,'2021-06-29');
 /*!40000 ALTER TABLE `receiver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-16 18:46:26
+-- Dump completed on 2021-07-31 15:39:54

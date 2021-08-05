@@ -8,10 +8,10 @@ import java.util.Date;
 
 import javax.sql.DataSource;
 
+import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,7 @@ public class FetchData {
 	@Autowired
 	DataSource dataSource;
 	
-	Logger logger = (Logger) LogManager.getLogger(FetchData.class);
+	Logger logger = LogManager.getLogger(FetchData.class);
 	
 	public ResponseEntity<String> fetchData(String url) {
 		RestTemplate req = new RestTemplate();

@@ -22,11 +22,20 @@ public class Receiver {
     @Column(name="receive_date")
     String receive_date;
 
-    public Receiver(String id, int user_id, int vaccine_id, int center_id) {
+    public Receiver(String id, int user_id, int vaccine_id, int center_id,String receive_date) {
         this.id = id;
         this.user_id = user_id;
         this.vaccine_id = vaccine_id;
         this.center_id = center_id;
+        this.receive_date = receive_date;
+    }
+
+    public String getReceive_date() {
+        return receive_date;
+    }
+
+    public void setReceive_date(String receive_date) {
+        this.receive_date = receive_date;
     }
 
     public Receiver() {

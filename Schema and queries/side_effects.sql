@@ -33,7 +33,7 @@ CREATE TABLE `side_effects` (
   KEY `vaccine_id` (`vaccine_id`),
   CONSTRAINT `side_effects_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`ssn`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `side_effects_ibfk_2` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccine` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `side_effects` (
 
 LOCK TABLES `side_effects` WRITE;
 /*!40000 ALTER TABLE `side_effects` DISABLE KEYS */;
-INSERT INTO `side_effects` VALUES (4,22312,1001,'Body pain',24),(5,22312,1001,'Headache',24),(6,22313,1002,'Body pain',24);
+INSERT INTO `side_effects` VALUES (1,22312,1001,'Body pain',27),(2,22312,1001,'Headache',27),(3,22313,1002,'Body pain',24);
 /*!40000 ALTER TABLE `side_effects` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-16 18:46:26
+-- Dump completed on 2021-07-31 15:39:53

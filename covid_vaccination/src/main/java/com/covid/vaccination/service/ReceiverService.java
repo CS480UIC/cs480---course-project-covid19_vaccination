@@ -21,13 +21,14 @@ public class ReceiverService {
 
     @Transactional
     public void addReceiver(Receiver receiver) {
-        receiverRepository.addTodatabse(receiver.getId(),receiver.getUser_id(),receiver.getVaccine_id(),receiver.getCenter_id());
+        System.out.println(receiver.getReceive_date());
+        receiverRepository.addTodatabse(receiver.getId(),receiver.getUser_id(),receiver.getVaccine_id(),receiver.getCenter_id(),receiver.getReceive_date());
     }
 
     @Transactional
     public void updateReceiver(Receiver receiver,String id) {
 
-        receiverRepository.updateDatabse(id,receiver.getUser_id(),receiver.getCenter_id(),receiver.getVaccine_id());
+        receiverRepository.updateDatabse(id,receiver.getUser_id(),receiver.getCenter_id(),receiver.getVaccine_id(),receiver.getReceive_date());
     }
 
     @Transactional

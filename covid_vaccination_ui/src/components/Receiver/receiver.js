@@ -3,6 +3,13 @@ import { Button, CssBaseline, TextField, Link, Grid, Typography, makeStyles, Con
 import Axios from 'axios';
 import { useHistory } from "react-router-dom";
 import { NavLink } from 'react-router-dom'
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker
+} from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
+import DatePicker from "react-datepicker";
+
 
 export default function Receiver() {
   const url="http://localhost:8080/api/receiver"
@@ -12,7 +19,10 @@ export default function Receiver() {
         userId: "",
         vaccineId: "",
         centerId:"",
+        receive_date:"",
       });
+
+    const [date, setdate] = useState('2021-07-01')
 
       const handleInputChange = (event) => {
         setState((prevProps) => ({
@@ -21,13 +31,22 @@ export default function Receiver() {
         }));
       };
 
+      /*const handleDateChange=(date) => {
+          setdate(date)
+
+          console.log(typeof(date.date))
+      }*/
+
       const handleSubmit = (event) => {
-        console.log(state.receiverId)
+        event.preventDefault()
+        console.log(state.receive_date)
+        console.log(state.userId)
         Axios.post(url,{
           id: state.receiverId,
           user_id: parseInt(state.userId),
           vaccine_id:parseInt(state.vaccineId),
-          center_id: parseInt(state.centerId)
+          center_id: parseInt(state.centerId),
+          receive_date: state.receive_date
         })
         .then(res =>{
         //   this.props.history.push("/home"); 
@@ -46,6 +65,7 @@ export default function Receiver() {
             Receiver
           </Typography>
           <form className={classes.form} noValidate>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -85,7 +105,7 @@ export default function Receiver() {
               <Grid item xs={12}>
                 <TextField
                   variant="outlined"
-                  required
+               
                   fullWidth
                   name="centerId"
                   label="centerId"
@@ -93,6 +113,17 @@ export default function Receiver() {
                   onChange={handleInputChange}
                 />
               </Grid>
+              <Grid item xs={12}>
+              <TextField
+                  variant="outlined"
+               
+                  fullWidth
+                  name="receive_date"
+                  label="vaccination date {yyyy-mm-dd}"
+                  id="receive_date"
+                  onChange={handleInputChange}
+                />
+        </Grid>
             </Grid>
             <Button
               onClick={handleSubmit}
@@ -104,7 +135,7 @@ export default function Receiver() {
             >
               submit
             </Button>
-
+            </MuiPickersUtilsProvider>
           </form>
 
           
