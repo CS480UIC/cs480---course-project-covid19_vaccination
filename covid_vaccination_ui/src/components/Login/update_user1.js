@@ -19,14 +19,25 @@ export default function UpdateUser() {
       }
     },[posts])
 
-    const updateRow=(post,e)=>{
-      console.log('post', post);
-      console.log('posts', posts);
+    // Update the state after input values are edited
+    const updateRow=(i,event)=>{
+      console.log('posts before-----', posts);
+      console.log('index', i);
+      console.log('event', event);
       
+      var rPosts = [ ...posts ]
+      rPosts[i][event.target.name] = event.target.value;
+      // let statusCopy = Object.assign({}, posts);
+      // console.log('statusCopy', statusCopy);
+      // statusCopy[index][event.target.attributes.name] = event.target.value;
+      setstate(rPosts);
+
+      
+      console.log('posts after update---', posts);
     }
 
     const deleteRow=(id,e)=>{
-      console.log(id)
+      console.log(id);
       axios.delete(`http://localhost:8080/api/user/${id}`)
         .then(res => {
           console.log(res);
@@ -34,6 +45,19 @@ export default function UpdateUser() {
           
           setstate(posts.filter(item => item.id !== id));
         })
+    }
+
+    // API call to update the values to database
+    const updateOne=(id, e, i)=>{
+      console.log('ssn to update-----', id);
+      console.log('index-------', i);
+      let intId = parseInt(id);
+      try {
+        axios.put(`http://localhost:8080/api/user/${intId}`, posts[i]);
+      }
+      catch(error){
+        console.log('Error while Updating user-----', error);
+      }
     }
 
     return (
@@ -51,15 +75,16 @@ export default function UpdateUser() {
             </thead>
   
             <tbody>
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <tr>
-                  <td contentEditable='true'>{post.name}</td>
+                  <td contentEditable='true'><input type="text" name="name" value={post.name} onChange={updateRow.bind(this, index)}/></td>
+                  {/* <td contentEditable='true'>{post.name}</td> */}
                   <td contentEditable='true'>{post.email}</td>
                   <td contentEditable='true'>{post.phone_number}</td>
                   <td contentEditable='true'>{post.ssn}</td>
                   <td>
                     <button className="btn btn-danger" onClick={(e) => deleteRow(post.ssn, e)}>Delete</button>
-                    <button className="btn btn-danger" onClick={(e) => updateRow(post, e)} >Update</button>
+                    <button className="btn btn-danger" onClick={(e) => updateOne(post.ssn, e, index)} >Update</button>
                   </td>
                 </tr>
               ))}

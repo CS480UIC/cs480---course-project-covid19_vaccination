@@ -36,16 +36,26 @@ export default class PostList extends React.Component {
     
     }
 
-    updateRow(id, e){
-        console.log(id)
-      axios.put(`http://localhost:8080/api/vaccine/${id}`,{
-         
-      })
-      .then(res=>{
-        
-      })
+    updateRow(i, event){
+      console.log('i', i);
+      var rPosts = { ...this.state.posts };
+      rPosts[i][event.target.name] = event.target.value;
+      console.log('rPosts after update------', rPosts);
+      this.setState(rPosts);
 
     
+    }
+
+    updateOne(id, e, i){
+      console.log('id to update-----', id);
+      console.log('index-------', i);
+      let intId = parseInt(id);
+      try {
+        axios.put(`http://localhost:8080/api/vaccine/${id}`, this.state.posts[i]);
+      }
+      catch(error){
+        console.log('Error while Updating user-----', error);
+      }
     }
     
     render() {
@@ -63,14 +73,15 @@ export default class PostList extends React.Component {
               </thead>
     
               <tbody>
-                {this.state.posts.map((post) => (
+                {this.state.posts.map((post, index) => (
                   <tr>
+                    <td contentEditable='true'><input type="text" name="vaccine_name" value={post.vaccine_name} onChange={this.updateRow.bind(this, index)}/></td>
                     <td contentEditable='true'>{post.vaccine_name}</td>
                     <td contentEditable='true'>{post.doses}</td>
-                    <td contentEditable='true'>{post.type}</td>
+                    <td contentEditable='true'><input type="text" name="type" value={post.type} onChange={this.updateRow.bind(this, index)}/></td>
                     <td>
                       <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.id, e)}>Delete</button>
-                      <button className="btn btn-danger" onClick={(e) => this.updateRow(post.id, e)}>Update</button>
+                      <button className="btn btn-danger" onClick={(e) => this.updateOne(post.id, e, index)}>Update</button>
                     </td>
                   </tr>
                 ))}
